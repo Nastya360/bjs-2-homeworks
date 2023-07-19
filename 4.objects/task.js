@@ -12,17 +12,17 @@ Student.prototype.setSubject = function (subjectName) {
 
 }
 
-Student.prototype.addMarks = function (...marks) {
+Student.prototype.addMarks = function (...add) {
     if (!this.marks) {
         return console.log("Студент не найден");
     }
 
-    this.marks.push(...marks);
+    this.marks.push(...add);
 
 }
 
 Student.prototype.getAverage = function () {
-    if (!this.marks || this.marks.length === 0) {
+    if (!this.marks || this.marks.length===0) {
         return 0;
     }
     const sum = this.marks.reduce((acc, mark) => acc + mark);
@@ -33,5 +33,5 @@ Student.prototype.getAverage = function () {
 Student.prototype.exclude = function (reason) {
     delete this.subject;
     delete this.marks;
-    this.exclude = reason;
+    this.excluded = reason;
 }
