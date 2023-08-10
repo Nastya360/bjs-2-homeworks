@@ -53,7 +53,7 @@ class AlarmClock {
         this.intervalId = null;
     }
     resetAllCalls() {
-        this.alarmCollection.forEach(alarm => { alarm.canCall === true });
+        this.alarmCollection.forEach(alarm => { alarm.canCall = true });
     }
 
     clearAlarms() {
